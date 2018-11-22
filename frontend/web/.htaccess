@@ -1,0 +1,21 @@
+RewriteEngine on
+
+# если это папка или файл, открываем его
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# в противном случае перенаправляем на index.php
+RewriteRule . index.php
+
+#<ifmodule mod_expires.c>
+#    <filesmatch ".(jpg|jpeg|gif|png|ico|css|js|woff)$">
+#        ExpiresActive on
+#        ExpiresDefault "access plus 7 day"
+#    </filesmatch>
+#</ifmodule>
+#
+#<IfModule mod_deflate.c>
+#  <FilesMatch "\.(ttf|otf|eot|svg)$" >
+#    SetOutputFilter DEFLATE
+#  </FilesMatch>
+#</IfModule>
